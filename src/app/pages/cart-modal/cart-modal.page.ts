@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
+declare var AppboyPlugin: any;
+
 @Component({
   selector: 'app-cart-modal',
   templateUrl: './cart-modal.page.html',
@@ -16,6 +18,7 @@ export class CartModalPage implements OnInit {
 
   ngOnInit() {
     this.cart = this.cartService.getCart();
+    AppboyPlugin.logCustomEvent("Cart viewed");
   }
 
   decreaseCartItem(product) {
@@ -40,16 +43,14 @@ export class CartModalPage implements OnInit {
 
   async checkout() {
     // Perfom PayPal or Stripe checkout process
+    const total = this.getTotal();
+    const amount = this.cart.length;
+    const products = this.cart.map((p) => p.name);
 
-    let alert = await this.alertCtrl.create({
-      header: 'Thanks for your Order!',
-      message: 'We will deliver your food as soon as possible',
-      buttons: ['OK']
-    });
-    alert.present().then(() => {
-      this.modalCtrl.dismiss();
-      this.router.navigate(['/home']);
-      this.cartService.deleteCart();
-    });
+    AppboyPlugin.logPurchase("Order purchased",total,'ARS', amount, {"products":products});
+    
+    this.router.navigate(['/home']);
+    this.cartService.deleteCart();
+
   }
 }

@@ -1,10 +1,11 @@
 import { CartService } from './../services/cart.service';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { CartModalPage } from '../pages/cart-modal/cart-modal.page';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 import { Product } from './product.model';
+
+declare var amplitude: any;
 
 @Component({
   selector: 'app-home',
@@ -27,6 +28,7 @@ export class HomePage {
     });
     this.cart = this.cartService.getCart();
     this.cartItemCount = this.cartService.getCartItemCount();
+    amplitude.logEvent("Home Page Viewed");
   }
 
   ionViewWillEnter() {
@@ -37,6 +39,7 @@ export class HomePage {
   addToCart(product) {
     this.cartService.addProduct(product);
     console.log(this.cart)
+    amplitude.logEvent("Add product to cart");
     this.animateCSS('tada');
   }
 

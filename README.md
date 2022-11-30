@@ -1,9 +1,23 @@
 # addtocart-ionic-app
 Cross platform mobile app developed with Ionic, Cordova and Angular
 
+## First run 
+
 ```
 npm install
-ionic cordova prepare android
+
+```
+
+## Running Android emulator
+
+Agregar la plataforma de android:
+
+```
+ionic cordova platform add android
+```
+
+```
+ionic cordova build android
 ionic cordova run android -l
 
 ```
@@ -25,3 +39,14 @@ Volver a ejecutar:
 ```
 ionic cordova run android -l
 ```
+
+## iOS
+
+
+```
+ionic cordova platform add ios
+ionic cordova build ios
+ionic cordova run ios -l
+
+```
+

@@ -45,6 +45,7 @@
     "appboy-cordova-sdk": "github:braze-inc/braze-cordova-sdk#2.23.0",
     "codelyzer": "^5.0.0",
     "cordova-android": "^8.1.0",
+    "cordova-ios": "^5.1.1",
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.2.1",
@@ -77,7 +78,8 @@
       "cordova-plugin-appboy": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

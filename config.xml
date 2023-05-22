@@ -27,7 +27,7 @@
         <preference name="GradleVersion" value="7.3.3" />
         <preference name="AndroidXEnabled" value="true" />
         <preference name="Scheme" value="http" />
-        <preference name="com.appboy.api_key" value="7462478d-e29a-4ffb-af47-2ed0d6c89287" />
+        <preference name="com.appboy.api_key" value="e216ae25-363d-4055-a981-5aa5ef39b84f" />
         <preference name="com.appboy.android_api_endpoint" value="sdk.iad-06.braze.com" />
         <preference name="com.appboy.firebase_cloud_messaging_registration_enabled" value="true" />
         <preference name="com.appboy.android_fcm_sender_id" value="str_453941191647" />
@@ -58,6 +58,7 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <preference name="com.braze.api_key" value="a3e330c3-7414-4344-85ee-3111cb5529f5" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
         <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />
